@@ -1,0 +1,4 @@
+settings.json
+jobs.db
+__pycache__/
+*.pyc

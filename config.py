@@ -18,6 +18,7 @@ GEMMA_API_KEY = _s.get("gemma_api_key", "")
 TELEGRAM_TOKEN = _s.get("telegram_token", "")
 TELEGRAM_CHAT_ID = _s.get("telegram_chat_id", "")
 HOURS_OLD = int(_s.get("hours_old", 48))
+CUSTOM_INSTRUCTIONS = _s.get("custom_instructions", "")
 SCORING_RUBRIC = """
 SCORING RUBRIC — follow this strictly:
 

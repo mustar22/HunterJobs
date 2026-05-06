@@ -1,5 +1,5 @@
 from google import genai
-from config import GEMMA_API_KEY, PROFILE, HARD_REJECT, SCORING_RUBRIC
+from config import GEMMA_API_KEY, PROFILE, HARD_REJECT, SCORING_RUBRIC, CUSTOM_INSTRUCTIONS
 from datetime import datetime
 
 client = genai.Client(api_key=GEMMA_API_KEY)
@@ -47,6 +47,9 @@ Description: {description[:3000]}
 Score this job 1-10 and give a verdict based on the candidate profile above.
 
 {SCORING_RUBRIC}
+
+CUSTOM USER INSTRUCTIONS (follow these strictly):
+{CUSTOM_INSTRUCTIONS}
 
 Respond in this exact format:
 SCORE: X

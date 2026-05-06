@@ -201,6 +201,16 @@ with tab2:
         label_visibility="collapsed"
     )
 
+    st.subheader("🤖 Custom AI Instructions")
+    st.caption("Tell Gemma how to evaluate jobs for your specific situation")
+    custom_instructions = st.text_area(
+        "Custom Instructions",
+        value=settings.get("custom_instructions", ""),
+        height=150,
+        label_visibility="collapsed",
+        placeholder="Example:\n- If role requires US work authorization, score 1 and SKIP\n- Prioritize roles open to international remote contractors\n- Skip roles above $120k salary"
+    )
+
     st.subheader("⏱️ Search Settings")
     hours_old = st.slider("Only show jobs posted within (hours)",
                           min_value=24, max_value=168, value=int(settings.get("hours_old", 48)), step=24)
@@ -212,6 +222,7 @@ with tab2:
             "search_terms": search_terms,
             "hard_reject": hard_reject,
             "hours_old": hours_old,
+            "custom_instructions": custom_instructions,
         }
         save_settings(new_settings)
         st.success("✅ Settings saved!")

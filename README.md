@@ -35,7 +35,7 @@ Python · JobSpy · Gemma 4 26B · Streamlit · SQLite
 
 ---
 
-*Built this because I was spending hours manually filtering job boards full of US-only roles, agency spam, and senior positions. Automated the boring part so I can focus on actually applying.*
+*Built this because I was spending a lot of time manually filtering job boards full of US-only roles, agency spam, and senior positions. Automated the boring part so I can focus on actually applying :)*
 
 ## Credits
 

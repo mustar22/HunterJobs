@@ -56,12 +56,17 @@ RED: [2-3 red flags]
 REASON: [one sentence]
 """
 
-    response = client.models.generate_content(
-        model="gemma-4-26b-a4b-it",
-        contents=prompt
-    )
+    try:
+        response = client.models.generate_content(
+            model="gemma-4-26b-a4b-it",
+            contents=prompt
+        )
+        text = response.text
+    except Exception as e:
+        print(f"Gemma API error: {e}")
+        return {"verdict": "SKIP", "score": 0, "reason": "API error",
+                "green": "", "red": "", "freshness": get_freshness(date_posted)}
 
-    text = response.text
     result = {
         "raw": text,
         "score": 0,

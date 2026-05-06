@@ -3,7 +3,7 @@ import time
 from jobspy import scrape_jobs
 from filter import filter_job
 from telegram_sender import send_telegram
-from config import TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, SEARCH_TERMS
+from config import TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, SEARCH_TERMS, HOURS_OLD
 
 # Setup SQLite to track seen jobs
 def init_db():
@@ -66,7 +66,7 @@ def run_hunt():
                 search_term=term,
                 is_remote=True,
                 results_wanted=20,
-                hours_old=48,
+                hours_old=HOURS_OLD,
                 linkedin_fetch_description=True,
                 country_indeed="worldwide"
             )

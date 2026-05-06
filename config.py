@@ -17,6 +17,7 @@ SEARCH_TERMS = [x.strip() for x in _s.get("search_terms", "").split("\n") if x.s
 GEMMA_API_KEY = _s.get("gemma_api_key", "")
 TELEGRAM_TOKEN = _s.get("telegram_token", "")
 TELEGRAM_CHAT_ID = _s.get("telegram_chat_id", "")
+HOURS_OLD = int(_s.get("hours_old", 48))
 SCORING_RUBRIC = """
 SCORING RUBRIC — follow this strictly:
 

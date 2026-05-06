@@ -201,12 +201,17 @@ with tab2:
         label_visibility="collapsed"
     )
 
+    st.subheader("⏱️ Search Settings")
+    hours_old = st.slider("Only show jobs posted within (hours)",
+                          min_value=24, max_value=168, value=int(settings.get("hours_old", 48)), step=24)
+
     if st.button("💾 Save Settings", type="primary"):
         new_settings = {
             "gemma_api_key": gemma_key,
             "profile": profile,
             "search_terms": search_terms,
             "hard_reject": hard_reject,
+            "hours_old": hours_old,
         }
         save_settings(new_settings)
         st.success("✅ Settings saved!")
